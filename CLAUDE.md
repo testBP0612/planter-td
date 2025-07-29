@@ -25,20 +25,25 @@ This is a Nuxt.js 3 application using TypeScript, Tailwind CSS, and shadcn/ui co
 - **Vue 3**: Frontend framework using Composition API
 - **TypeScript**: Type safety throughout the application
 - **Tailwind CSS v4**: Utility-first CSS framework via Vite plugin
-- **shadcn/ui**: Component library integrated via shadcn-nuxt module
+- **shadcn-vue**: Vue component library integrated via shadcn-nuxt module
+- **Nuxt Content**: Content management system for Markdown files
 
 ### Project Structure
 
 - `app.vue`: Root application component using NuxtLayout and NuxtPage
-- `pages/`: File-based routing (currently has index.vue)
-- `components/`: Vue components (shadcn/ui components go in `components/ui/`)
+- `pages/`: File-based routing with Encyclopedia and Wiki sections
+- `layouts/`: Layout components (default.vue with navigation and breadcrumbs)
+- `components/`: Vue components (shadcn-vue components go in `components/ui/`)
+- `composables/`: Vue composables (useContent.ts, useNavigation.ts)
+- `content/`: Markdown content files organized by encyclopedia/ and wiki/
+- `types/`: TypeScript type definitions
 - `assets/css/`: Global styles (tailwind.css imports)
 - `server/`: Server-side code with separate tsconfig.json
 - `public/`: Static assets
 
 ### Configuration
 
-- `nuxt.config.ts`: Main Nuxt configuration with shadcn module and Tailwind Vite plugin
+- `nuxt.config.ts`: Main Nuxt configuration with @nuxt/content, shadcn-nuxt module and Tailwind Vite plugin
 - `eslint.config.js`: ESLint with Nuxt config, Prettier integration, and TypeScript support
 - `tsconfig.json`: Extends .nuxt/tsconfig.json for auto-generated types
 
@@ -47,3 +52,10 @@ This is a Nuxt.js 3 application using TypeScript, Tailwind CSS, and shadcn/ui co
 - ESLint configured with @nuxt/eslint-config and Prettier integration
 - Prettier configured with Tailwind CSS plugin for class sorting
 - TypeScript strict mode enabled through Nuxt's configuration
+
+### CSS Development Rules
+
+- **Primary approach**: Use Tailwind utility classes
+- **Custom CSS**: Allowed when Tailwind cannot meet requirements
+- **Strictly forbidden**: Use of `@apply` directive in any context
+- **Component styling**: Prefer shadcn-vue components over custom components
