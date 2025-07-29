@@ -17,6 +17,7 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
+    "@nuxt/content": "^3.6.3",
     "@tailwindcss/vite": "^4.1.11",
     "@vueuse/core": "^13.6.0",
     "class-variance-authority": "^0.7.1",

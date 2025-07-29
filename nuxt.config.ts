@@ -9,7 +9,10 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()]
   },
 
-  modules: ['shadcn-nuxt'],
+  modules: ['@nuxt/content', 'shadcn-nuxt'],
+
+  content: {},
+
   shadcn: {
     /**
      * Prefix for all the imported component
